@@ -1,0 +1,21 @@
+// Delegates.groovy
+
+def writer = {
+    append 'Rahul'                                            // writer calls 2 append methods
+    append ' lives in Colorado Springs'
+}
+
+def append(String s) {                                         // creating an append method so that writer can work
+    println "append() called with argument of $s" 
+} 
+
+
+        /*note that if we uncommented the def append(String s... method and ran everything that Groovy would not resolve the delate as final result. 
+          Groovy documentation lists the resolve strategy for Closures in the closure section. */
+          
+StringBuffer sb = new StringBuffer()                           // creating a new stringbuffer property sb
+writer.resolveStrategy = Closure.DELEGATE_FIRST                // this makes sure that the closures delegate is the first resolve thus acoiding unwanted ...
+                                                               // results from the append method
+writer.delegate = sb                                           // delegating stringbuffer sb property to writer
+writer()                                             
+
