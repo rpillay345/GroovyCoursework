@@ -1,0 +1,17 @@
+{
+    "books": {
+        "book": {
+            "title": "The 4 Hours Work Week",
+            "isbn": "978-0-3307-46535-1",
+            "author": {
+                "first": "Timothy",
+                "last": "Feriss",
+                "twitter": "@tferiss"
+            },
+            "related": [
+                "The 4 Hours Body",
+                "The 3 Hours Chef"
+            ]
+        }
+    }
+}
